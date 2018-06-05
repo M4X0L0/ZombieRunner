@@ -5,12 +5,12 @@ public class Heli : MonoBehaviour {
 
 	public bool playerIsNearHeli = false;
 	public bool inBound = false;
-	private Rigidbody rb;
+//	private Rigidbody rb;
 
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody>();
+//		rb = GetComponent<Rigidbody>();
 	}
 
 	public void Soccorso () {

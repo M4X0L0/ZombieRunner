@@ -12,12 +12,13 @@ public class PlayerInput : MonoBehaviour {
 	private Heli heli;
 	private Radio radio;
 
+	public GameObject interactable;
 	public float zoomFOV = 30f;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindObjectOfType<Player>();
-		eyes = GetComponent<Camera>();
+		eyes = GetComponentInChildren<Camera>();
 		torch = GameObject.FindObjectOfType<TorchScript>();
 
 
@@ -60,9 +61,19 @@ public class PlayerInput : MonoBehaviour {
 			Debug.Log("il giocatore è salvo");
 		}
 
-
+		if (Input.GetButtonDown("Interagisci") && heli.playerIsNearHeli)
+		{
+			//l'elicottero vola via e il giocatore viene salvato
+			Debug.Log("il giocatore è salvo");
+		}
 
 	}
+
+	public void InteractWithObject (GameObject interactable)
+		{
+			Debug.Log(interactable);
+		}
+
 
 
 
