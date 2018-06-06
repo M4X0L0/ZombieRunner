@@ -17,7 +17,7 @@ public class Interact : MonoBehaviour {
 	
 	}
 
-	void OnTriggerStay (Collider coll) {
+	void OnTriggerEnter (Collider coll) {
 		playerInput.InteractWithObject(gameObject);
 	}
 }

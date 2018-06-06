@@ -1,4 +1,6 @@
-﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 
 Shader "MatCap/Particles/Soft Alpha Blended With Fog" {
 Properties {
@@ -52,7 +54,7 @@ SubShader {
 		v2f vert (appdata_t v)
 		{
 			v2f o;
-			o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+			o.vertex = UnityObjectToClipPos(v.vertex);
 			o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
 			o.texcoord1.xy = TRANSFORM_TEX(v.tangent,_MainTex); 
 			o.texcoord1.z = v.tangent.z;
